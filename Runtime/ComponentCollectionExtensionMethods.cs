@@ -44,5 +44,13 @@ namespace Kogane
 
             self.Clear();
         }
+
+        public static void SetActiveAll<T>( this IReadOnlyList<T> self, bool value ) where T : Component
+        {
+            foreach ( var x in self )
+            {
+                x.gameObject.SetActive( value );
+            }
+        }
     }
 }
