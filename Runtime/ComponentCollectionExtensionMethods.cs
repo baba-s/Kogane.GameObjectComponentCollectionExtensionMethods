@@ -5,8 +5,10 @@ namespace Kogane
 {
     public static class ComponentCollectionExtensionMethods
     {
-        public static void DestroyAll<T>( this T[] self ) where T : Component
+        public static void DestroyGameObjectAll<T>( this T[] self ) where T : Component
         {
+            if ( self == null ) return;
+
             for ( var i = 0; i < self.Length; i++ )
             {
                 Object.Destroy( self[ i ].gameObject );
@@ -14,8 +16,10 @@ namespace Kogane
             }
         }
 
-        public static void DestroyImmediateAll<T>( this T[] self ) where T : Component
+        public static void DestroyGameObjectImmediateAll<T>( this T[] self ) where T : Component
         {
+            if ( self == null ) return;
+
             for ( var i = 0; i < self.Length; i++ )
             {
                 Object.DestroyImmediate( self[ i ].gameObject );
@@ -23,8 +27,10 @@ namespace Kogane
             }
         }
 
-        public static void DestroyAll<T>( this List<T> self ) where T : Component
+        public static void DestroyGameObjectAll<T>( this List<T> self ) where T : Component
         {
+            if ( self == null ) return;
+
             for ( var i = 0; i < self.Count; i++ )
             {
                 Object.Destroy( self[ i ].gameObject );
@@ -34,8 +40,10 @@ namespace Kogane
             self.Clear();
         }
 
-        public static void DestroyImmediateAll<T>( this List<T> self ) where T : Component
+        public static void DestroyGameObjectImmediateAll<T>( this List<T> self ) where T : Component
         {
+            if ( self == null ) return;
+
             for ( var i = 0; i < self.Count; i++ )
             {
                 Object.DestroyImmediate( self[ i ].gameObject );

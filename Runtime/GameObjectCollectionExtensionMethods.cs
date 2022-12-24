@@ -7,6 +7,8 @@ namespace Kogane
     {
         public static void DestroyAll( this GameObject[] self )
         {
+            if ( self == null ) return;
+
             for ( var i = 0; i < self.Length; i++ )
             {
                 Object.Destroy( self[ i ] );
@@ -16,6 +18,8 @@ namespace Kogane
 
         public static void DestroyImmediateAll( this GameObject[] self )
         {
+            if ( self == null ) return;
+
             for ( var i = 0; i < self.Length; i++ )
             {
                 Object.DestroyImmediate( self[ i ] );
@@ -25,6 +29,8 @@ namespace Kogane
 
         public static void DestroyAll( this List<GameObject> self )
         {
+            if ( self == null ) return;
+
             for ( var i = 0; i < self.Count; i++ )
             {
                 Object.Destroy( self[ i ] );
@@ -36,6 +42,8 @@ namespace Kogane
 
         public static void DestroyImmediateAll( this List<GameObject> self )
         {
+            if ( self == null ) return;
+
             for ( var i = 0; i < self.Count; i++ )
             {
                 Object.DestroyImmediate( self[ i ] );
